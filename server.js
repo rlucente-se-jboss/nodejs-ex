@@ -84,6 +84,8 @@ app.get('/hello', function(req, res) {
     for (var k2 in interfaces[k]) {
         var address = interfaces[k][k2];
         res.send('Address: ' + address.address + '\n');
+    }
+  }
 });
 
 app.get('/exit', function(req, res) {
