@@ -75,7 +75,7 @@ app.get('/pagecount', function (req, res) {
 
 app.get('/hello', function(req, res) {
   var date = new Date();
-  res.send('Timestamp: ' + date + '\n');
+  res.write('Timestamp: ' + date + '\n');
   
   var os = require('os');
   var interfaces = os.networkInterfaces();
@@ -83,9 +83,10 @@ app.get('/hello', function(req, res) {
   for (var k in interfaces) {
     for (var k2 in interfaces[k]) {
         var address = interfaces[k][k2];
-        res.send('Address: ' + address.address + '\n');
+        res.write('Address: ' + address.address + '\n');
     }
   }
+  res.end();
 });
 
 app.get('/exit', function(req, res) {
