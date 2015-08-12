@@ -74,6 +74,7 @@ app.get('/pagecount', function (req, res) {
 });
 
 app.get('/hello', function(req, res) {
+  res.write('Hello World!\n');
   var date = new Date();
   res.write('Timestamp: ' + date + '\n');
   
